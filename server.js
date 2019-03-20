@@ -1,4 +1,3 @@
-"use strict";
 const express = require('express');
 const app = express();
 const http = require('http');
@@ -31,7 +30,7 @@ io.on('connection', (socket) => {
 		// 	music: 'data/music',
 		// 	document: 'data/document'
 		// },
-		uploadDir: 'data',							// simple directory
+		uploadDir: 'D:/Coding/newFolder',							// simple directory
 		// accepts: ['audio/mpeg', 'audio/mp3'],		// chrome and some of browsers checking mp3 as 'audio/mp3', not 'audio/mpeg'
 		// maxFileSize: 4194304, 						// 4 MB. default is undefined(no limit)
 		chunkSize: 10240,							// default is 10240(1KB)
@@ -44,7 +43,6 @@ io.on('connection', (socket) => {
 
 		// 	return `${fname}_${count++}.${ext}`;
 		// }
-		rename: 'MyMusic.mp3'
 	});
 	uploader.on('start', (fileInfo) => {
 		console.log('Start uploading');
